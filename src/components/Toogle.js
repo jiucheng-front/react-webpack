@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+import "../styles/Toogle.scss";
 //1 开关切换组件
 class Toogle extends React.Component {
     constructor( props ){

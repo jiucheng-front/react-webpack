@@ -31,15 +31,15 @@ module.exports = {
     },
     //3 配置服务器
     devServer: {
-        // 指定服务器根目录：src/root
-        contentBase: path.join(__dirname, "/src/root"),
+        // 可指定服务器根目录：src/root 方便本地查看
+        // contentBase: path.join(__dirname, "/src/root"),
         inline: true,
         port: 8000,
         // 指定本地电脑的IP作为host,方便同一个局域网手机查看效果
         host: "172.16.9.142",
         proxy: {
             "/api":{
-                // 是否需要跨域
+                // 是否需要跨域去请求接口本地测试
                 target:"xxx.xx.com",
                 changeOrigin:true,
                 pathRewrite:{
@@ -51,7 +51,6 @@ module.exports = {
     //4 引入loaders
     module: {
         rules: [
-
             //4.1 解析压缩css,css-loader，
             {
                 test: /\.css$/,
