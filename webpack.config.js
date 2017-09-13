@@ -123,6 +123,7 @@ module.exports = {
             //4.3 html的模板,也可以是xxx.html
             template: 'webpack.temp.ejs'
         }),
+        new webpack.optimize.OccurrenceOrderPlugin(),
         //7 代码优化：合并以及压缩代码
         // 开发环境暂时不需要
         // new webpack.optimize.UglifyJsPlugin({
