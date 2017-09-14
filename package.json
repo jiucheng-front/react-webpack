@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf build",
-    "build": "webpack",
+    "build": "rimraf build&&webpack",
     "server": "webpack-dev-server --open"
   },
   "repository": {

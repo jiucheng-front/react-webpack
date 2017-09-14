@@ -32,12 +32,12 @@ module.exports = {
         // 可指定服务器根目录：src/root 方便本地查看
         // contentBase: path.join(__dirname, "/src/root"),
         inline: true,
-        port: 8000,
+        port: 3000,
         // 指定本地电脑的IP作为host,方便同一个局域网手机查看效果
         host: "172.16.9.142",
         proxy: {
+            // 是否需要跨域去请求接口本地测试
             "/api":{
-                // 是否需要跨域去请求接口本地测试
                 target:"xxx.xx.com",
                 changeOrigin:true,
                 pathRewrite:{
@@ -121,7 +121,6 @@ module.exports = {
             //4.3 html的模板,也可以是xxx.html
             template: 'webpack.temp.ejs'
         }),
-        new webpack.optimize.OccurrenceOrderPlugin(),
         //7 代码优化：合并以及压缩代码
         // 开发环境暂时不需要
         // new webpack.optimize.UglifyJsPlugin({
