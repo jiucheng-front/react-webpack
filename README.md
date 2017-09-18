@@ -1,4 +1,4 @@
-### 1、基于webpack的react脚手架
+### 1、未分离(命令执行的不是同一个文件)
 + npm install
 + npm run dev
 + npm run build

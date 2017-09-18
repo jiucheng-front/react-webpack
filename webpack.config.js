@@ -11,7 +11,6 @@
 //9 url-loader处理图片为base64(不推荐使用会导致CSS过大)
 //10 配置venddor,提取公用代碼，如dependencies 下的
 
-
 var webpack = require('webpack');
 const path = require("path");
 //4 配置HTML 模板 ,插件
@@ -21,15 +20,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 //6、2压缩CSS插件
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 
-
 //10.1 package.json中dependencies的所有项目依赖可以在下面声明
 // 如果继续最佳项目依赖得继续在下面写入
 const VENOR=[
     "react",
     "react-dom"
 ];
-
-
 
 module.exports = {
     //1 配置入口
