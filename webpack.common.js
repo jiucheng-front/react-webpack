@@ -3,7 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // 4、提取第三方JS庫
-const VENOR=[
+const VENDOR=[
     "react",
     "react-dom"
 ];
@@ -12,7 +12,7 @@ module.exports = {
     entry:{
         app:'./src/entry.js',
         //1.1
-        vendor: VENOR
+        vendor: VENDOR
     },
     output: {
         path: path.resolve(__dirname, 'dist'),

@@ -4,8 +4,6 @@ var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const common = require('./webpack.common.js');
 
-
-
 module.exports = merge(common, {
     plugins: [
         // 1、压缩CSS

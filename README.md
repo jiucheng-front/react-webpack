@@ -3,7 +3,9 @@
 + npm run dev
 + npm run build
 
-### 2、已经完善的基本配置
+### 2、未分离的原版配置参考dev分支上webpack.config.js
+
+### 3、已经完善的基本配置
 + 默认ejs模板
 + 编译less、scss
 + 热更新
