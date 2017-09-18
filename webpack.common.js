@@ -2,7 +2,7 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+// 4、提取第三方JS庫
 const VENOR=[
     "react",
     "react-dom"
@@ -11,7 +11,7 @@ const VENOR=[
 module.exports = {
     entry:{
         app:'./src/entry.js',
-        //10.2
+        //1.1
         vendor: VENOR
     },
     output: {
@@ -21,7 +21,7 @@ module.exports = {
     },
     module: {
         rules: [
-            //4.1 解析压缩css,css-loader，
+            //1.1 解析压缩css,css-loader，
             {
                 test: /\.css$/,
                 // 6.2 想抽离出来得
@@ -33,7 +33,7 @@ module.exports = {
                     }]
                 })
             },
-            { //4.2.SASS的.scss 文件使用 style-loader、css-loader 和 sass-loader 来编译处理
+            { //1.2.SASS的.scss 文件使用 style-loader、css-loader 和 sass-loader 来编译处理
                 test: /\.scss$/,
                 // 6.2 想抽离出来得
                 use: ExtractTextPlugin.extract({
@@ -44,7 +44,7 @@ module.exports = {
                     ]
                 })
             },
-            // 4.3 引入less-loader,编译less
+            // 1.3 引入less-loader,编译less
             {
                 test:/\.less$/,
                 use:ExtractTextPlugin.extract({
@@ -55,7 +55,7 @@ module.exports = {
                     ]
                 })
             },
-            //10 处理图片,图片路径需是相对路径才能看到效果
+            //2 处理图片,图片路径需是相对路径才能看到效果
             {
                 test: /\.(jpg|png|gif|svg)$/,
                 use: {
@@ -65,7 +65,7 @@ module.exports = {
                     }
                 }
             },
-            //8 编译es6和编译jsx
+            //3 编译es6和编译jsx
             {
                 test: /(\.jsx|\.js)$/,
                 exclude: /node_modules/,
