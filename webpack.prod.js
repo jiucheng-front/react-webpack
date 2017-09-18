@@ -14,6 +14,12 @@ module.exports = merge(common, {
         }),
         //2、压缩JS
         new UglifyJSPlugin(),
+        //3、指定环境
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production')
+            }
+        }),
         //4 、提取第三方JS庫，結合common內的vendor
         new webpack.optimize.CommonsChunkPlugin({
             // vendor 的意义和之前相同
