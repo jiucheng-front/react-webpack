@@ -1,5 +1,5 @@
 //模块化思想
-//1 启动server webpack-dev-server
+//1 启动server webpack-dev-server,自动刷新
 //2 模块化开发commonjs
 //3 版本号控制 hash或者chunkhash
 //4 css，less,sass引入
@@ -7,25 +7,41 @@
 //6 抽离css
 //7 压缩合并JS
 //8 用babel编译es6,需要创建.babelrc文件
-//9 url-loader处理图片为base64
+//9 url-loader处理图片为base64(不推荐使用会导致CSS过大)
+//10 配置venddor,提取公用代碼，如dependencies 下的
 
 
 var webpack = require('webpack');
+const path = require("path");
 //4 配置HTML 模板 ,插件
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-//6 把css抽离
+//6.1 把css抽离
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+//6、2压缩CSS插件
+var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 
-const path = require("path");
+
+//10.1 package.json中dependencies的所有项目依赖可以在下面声明
+// 如果继续最佳项目依赖得继续在下面写入
+const VENOR=[
+    "react",
+    "react-dom"
+];
+
+
 
 module.exports = {
     //1 配置入口
-    entry: './src/entry.js',
+    entry:{
+        app:'./src/entry.js',
+        //10.2
+        vendor: VENOR
+    },
     //2 配置出口（打包的输出路径）
     output: {
         path: __dirname + '/build',
-        // filename:'app_[hash].js'
-        filename: 'app_[chunkhash].js'
+        // filename: 'app_[chunkhash].js'
+        filename:'[name]_[chunkhash].js'
     },
     //3 配置服务器
     devServer: {
@@ -56,15 +72,9 @@ module.exports = {
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     // use: 'css-loader',
-                    use:[
-                      {
-                        loader: 'css-loader',
-                        // 压缩CSS
-                        options:{
-                          minimize: true
-                        }
-                      }
-                    ]
+                    use:[{
+                        loader: 'css-loader'
+                      }]
                 })
             },
             { //4.2.SASS的.scss 文件使用 style-loader、css-loader 和 sass-loader 来编译处理
@@ -140,6 +150,20 @@ module.exports = {
             // filename:'app_[chunkhash].css',
             disable: false,
             allChunks: true
+        }),
+        //6.2 压缩CSS
+        new OptimizeCSSPlugin({
+            cssProcessorOptions: {
+                safe: true
+            }
+        }),
+        //10.3 webpack 自带的插件 CommonsChunkPlugin提取公用JS库代码
+        new webpack.optimize.CommonsChunkPlugin({
+            // vendor 的意义和之前相同
+            // manifest文件是将每次打包都会更改的东西单独提取出来，保证没有更改的代码无需重新打包，这样可以加快打包速度
+            names: ['vendor', 'manifest'],
+            // 配合 manifest 文件使用
+            minChunks: Infinity
         })
     ]
 };
