@@ -17,7 +17,8 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         // filename: 'app_[chunkhash].js'
-        filename:'[name]_[chunkhash].js'
+        // 加上/js就会输出到js文件夹下面
+        filename:'js/[name]_[chunkhash].js'
     },
     module: {
         rules: [
@@ -78,7 +79,8 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new ExtractTextPlugin({
-            filename: 'app_[hash].css',
+            //加上/css就会输出到css文件夹下面
+            filename: 'css/app_[hash].css',
             // filename:'app_[chunkhash].css',
             disable: false,
             allChunks: true
