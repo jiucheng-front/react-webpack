@@ -7,6 +7,10 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
+    output:{
+        // 打包后html内引入文件是相对路径还是绝对路径
+        publicPath: "./",
+    },
     //可以扩展
     module:{
         rules:[

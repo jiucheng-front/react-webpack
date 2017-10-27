@@ -15,8 +15,6 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        // 打包后html内引入文件是相对路径还是绝对路径
-        // publicPath: "./",
         // filename: 'app_[chunkhash].js'
         // 加上/js就会输出到js文件夹下面
         filename:'js/[name]_[chunkhash].js'
