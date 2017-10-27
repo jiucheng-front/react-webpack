@@ -1,6 +1,5 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // 4、提取第三方JS庫
 const VENDOR=[
@@ -16,6 +15,8 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
+        // 打包后html内引入文件是相对路径还是绝对路径
+        // publicPath: "./",
         // filename: 'app_[chunkhash].js'
         // 加上/js就会输出到js文件夹下面
         filename:'js/[name]_[chunkhash].js'
@@ -62,7 +63,9 @@ module.exports = {
                 use: {
                     loader: 'url-loader',
                     options: {
-                        limit: 8192
+                        limit: 10000,
+                        // 默认打包到dist下的img文件夹
+                        name:'img/[name].[hash:7].[ext]'
                     }
                 }
             },
@@ -74,10 +77,23 @@ module.exports = {
                     loader: "babel-loader"
                 }
             },
+            //4 处理字体
+            {
+                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+                use: {
+                    loader: 'url-loader',
+                    options: {
+                        limit: 10000,
+                        // fonts/打包到dist下的fonts文件夹
+                        name: 'fonts/[name].[hash:7].[ext]'
+                    }
+                }
+            }
+
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(['dist']),
+        //5、提取css到单独的文件夹
         new ExtractTextPlugin({
             //加上/css就会输出到css文件夹下面
             filename: 'css/app_[hash].css',

@@ -1,11 +1,20 @@
 var webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const merge = require('webpack-merge');
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
+    //可以扩展
+    module:{
+        rules:[
+
+        ]
+    },
     plugins: [
+        new CleanWebpackPlugin(['dist']),
         // 1、压缩CSS
         new OptimizeCSSPlugin({
             cssProcessorOptions: {

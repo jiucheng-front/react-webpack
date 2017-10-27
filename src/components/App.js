@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import logo from '../assets/logo.svg';
 import '../styles/App.css';
+import "../styles/fontstyle.css"
 
 import Toogle from "./Toogle";
 
+//icon列表
+import Icon from "./Icon.jsx"
 
 class App extends Component {
   render() {
@@ -18,6 +21,8 @@ class App extends Component {
         </p>
         <h3>开关小组件</h3>
         <Toogle />
+        <h3>Icon字体，JSX</h3>
+        <Icon />
       </div>
     );
   }
