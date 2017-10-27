@@ -102,7 +102,8 @@ module.exports = {
                 use: {
                     loader: 'url-loader',
                     options: {
-                        limit: 8192
+                        limit: 10000,
+                        name:'img/[name].[hash:7].[ext]'
                     }
                 }
             },
@@ -114,6 +115,17 @@ module.exports = {
                     loader: "babel-loader"
                 }
             },
+            //处理字体
+            {
+                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+                use: {
+                    loader: 'url-loader',
+                    options: {
+                        limit: 10000,
+                        name: 'fonts/[name].[hash:7].[ext]'
+                    }
+                }
+            }
         ]
     },
     //5 配置HTML模板插件

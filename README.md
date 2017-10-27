@@ -7,7 +7,7 @@
 + 默认ejs模板
 + 编译less、scss
 + 热更新
-+ 抽离压缩CSS、js
++ 抽离压缩CSS、js、img、font到指定文件夹
 + 打包后chunkhash模式的版本号
 + 提取公用第三方JS库
 + 图片base64处理
