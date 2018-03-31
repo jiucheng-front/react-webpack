@@ -10,9 +10,9 @@ module.exports = merge(common, {
         port: 3000,
         //2、 指定本地电脑的IP作为host,方便同一个局域网手机查看效果，请填写自己本机的IP地址或者localhost
         // host: "172.16.9.142",
-        // host: "localhost",
+        host: "localhost",
         // 使用：switchHosts软件把本地指向某个地址
-        host: "local-test.gamelanglive.com",
+        // host: "local-test.gamelanglive.com",
         //3、 是否需要跨域去请求接口本地测试
         proxy: {
             "/api":{
