@@ -28,8 +28,9 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "clean-webpack-plugin": "^0.1.16",
+    "cross-env": "^5.1.4",
     "css-loader": "^0.27.3",
-    "extract-text-webpack-plugin": "^2.1.0",
+    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^0.10.1",
     "html-webpack-plugin": "^2.28.0",
     "less": "^2.7.2",
@@ -42,6 +43,7 @@
     "uglifyjs-webpack-plugin": "^0.4.6",
     "url-loader": "^0.5.8",
     "webpack": "^3.5.6",
+    "webpack-dev-server": "^2.9.7",
     "webpack-merge": "^4.1.0"
   }
 }

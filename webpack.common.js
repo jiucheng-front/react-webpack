@@ -34,6 +34,7 @@ module.exports = {
                 })
             },
             { //1.2.SASS的.scss 文件使用 style-loader、css-loader 和 sass-loader 来编译处理
+                //mac 下太难安装node-sass
                 test: /\.scss$/,
                 // 6.2 想抽离出来得
                 use: ExtractTextPlugin.extract({

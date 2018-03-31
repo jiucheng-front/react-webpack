@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 //1、test scss
-import "../styles/Toogle.scss";
+// import "../styles/Toogle.scss";
 //2、test less
 import "../styles/Toogle.less";
 //3 开关切换组件
