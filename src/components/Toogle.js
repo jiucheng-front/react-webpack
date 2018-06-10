@@ -8,13 +8,16 @@ import "../styles/Toogle.less";
 class Toogle extends React.Component {
     constructor( props ){
         super( props );
+        console.log(props)
         this.state={ isSelected : true };
-        this.handleToogle=this.handleToogle.bind(this);
+        this.handleToogle = this.handleToogle.bind(this);
     }
-    handleToogle(){
+    handleToogle(e){
+        e.preventDefault()
+        console.log(this);
         console.log(this.state.isSelected);
         this.setState(prevState => ({
-            isSelected: !prevState.isSelected
+            isSelected: !prevState.isSelected,
         }));
     }
     render(){
@@ -27,7 +30,7 @@ class Toogle extends React.Component {
         }
         return (
             <div className="box">
-                <h3 className="title">开关</h3>
+                <h3 className="title">{this.props.name}</h3>
                 <button onClick={ this.handleToogle }>
                     { this.state.isSelected ? "on" : "off" }
                 </button>
