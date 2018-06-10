@@ -13,10 +13,11 @@ import Icon from "./Icon.jsx"
 // 二、State 和 生命周期
 import Clock from "./Clock.jsx"
 
-
+// 三、lists 、keys
 import Lists from "./Lists.jsx"
 
-
+// 四、Form表单
+import Forms from "./Forms.jsx"
 
 // DOC  http://www.css88.com/react/docs/handling-events.html
 
@@ -39,6 +40,8 @@ class App extends Component {
 				<Clock />
 				<h3 className = "index-title">三、Lists和Keys</h3>
 				<Lists />
+				<h3 className = "index-title">四、Forms(表单)</h3>
+				<Forms />
 			</div>
 		);
 	}
