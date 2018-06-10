@@ -4,7 +4,7 @@ import '../styles/App.css';
 import "../styles/fontstyle.css"
 
 
-//一、 Components和props
+//一、 Components和props,事件处理程序
 import Toogle from "./Toogle";
 
 //icon字体列表
@@ -12,6 +12,10 @@ import Icon from "./Icon.jsx"
 
 // 二、State 和 生命周期
 import Clock from "./Clock.jsx"
+
+
+
+// DOC  http://www.css88.com/react/docs/handling-events.html
 
 class App extends Component {
 	render() {
