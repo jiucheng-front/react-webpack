@@ -1,6 +1,6 @@
-import React from "react"
+import React, { Component } from "react"
 
-let Icon = React.createClass({
+class Icon extends Component {
     render() {
         return (
             <div className="iconBox">
@@ -22,6 +22,7 @@ let Icon = React.createClass({
             </div>
         )
     }
-})
+}
+
 
 export default Icon

@@ -29,7 +29,7 @@ class Toogle extends React.Component {
             <div className="box">
                 <h3 className="title">开关</h3>
                 <button onClick={ this.handleToogle }>
-                    { this.state.isSelected ?"on":"off"}
+                    { this.state.isSelected ? "on" : "off" }
                 </button>
                 <p>{ p }</p>
             </div>
