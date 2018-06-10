@@ -7,7 +7,8 @@
 
 ### 3、已经完善的基本配置
 + 默认ejs模板
-+ 编译less、scss
++ 编译less、scss、stylus
++ 使用postcss自动css前缀
 + 热更新
 + 抽离压缩CSS、js、img、font到指定文件夹
 + 打包后chunkhash模式的版本号
