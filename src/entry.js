@@ -6,6 +6,8 @@ require("./js/flexible");
 // 2、reset css
 require("./styles/base.css");
 
+require("./styles/mixin.styl")
+
 import App from "./components/App";
 ReactDOM.render(<App />, document.getElementById('app'));
 
