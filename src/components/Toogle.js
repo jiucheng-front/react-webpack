@@ -14,29 +14,32 @@ class Toogle extends React.Component {
     }
     handleToogle(e){
         e.preventDefault()
-        console.log(this);
-        console.log(this.state.isSelected);
+        let targetElem = e.target
+        let index = targetElem.getAttribute("data-index")
+        console.log(targetElem,index)
+        console.log(this)
+        console.log(this.state.isSelected)
         this.setState(prevState => ({
             isSelected: !prevState.isSelected,
         }));
     }
     render(){
-        const isSelected=this.state.isSelected;
-        let p=null;
+        const isSelected=this.state.isSelected
+        let str=null
         if(isSelected){
-            p="开关打开";
+            str="开关打开"
         }else{
-            p="开关关闭！";
+            str="开关关闭！"
         }
         return (
             <div className="box">
                 <h3 className="title">{this.props.name}</h3>
-                <button onClick={ this.handleToogle }>
+                <button onClick={ this.handleToogle } data-index="0">
                     { this.state.isSelected ? "on" : "off" }
                 </button>
-                <p>{ p }</p>
+                <p>{ str }</p>
             </div>
-        );
+        )
     }
 }
 

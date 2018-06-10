@@ -4,7 +4,7 @@ import '../styles/App.css';
 import "../styles/fontstyle.css"
 
 
-//一、 Components和props,事件处理程序
+//一、 Components和props,事件处理程序,条件渲染
 import Toogle from "./Toogle";
 
 //icon字体列表
@@ -12,6 +12,9 @@ import Icon from "./Icon.jsx"
 
 // 二、State 和 生命周期
 import Clock from "./Clock.jsx"
+
+
+import Lists from "./Lists.jsx"
 
 
 
@@ -34,6 +37,8 @@ class App extends Component {
 				<Icon />
 				<h3 className = "index-title">二、State(状态)和生命周期</h3>
 				<Clock />
+				<h3 className = "index-title">三、Lists和Keys</h3>
+				<Lists />
 			</div>
 		);
 	}
