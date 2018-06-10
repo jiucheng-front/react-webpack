@@ -42,6 +42,7 @@ class App extends Component {
 				<Lists />
 				<h3 className = "index-title">四、Forms(表单)</h3>
 				<Forms />
+				<h3 className = "index-title">五、状态提升</h3>
 			</div>
 		);
 	}
