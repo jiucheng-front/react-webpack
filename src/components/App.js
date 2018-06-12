@@ -4,6 +4,19 @@ import '../styles/App.css';
 import "../styles/fontstyle.css"
 
 
+
+// AJAX api
+import Ajax from "../api/Api"
+
+let data = Ajax("GET","https://api.github.com/gists")
+
+data.then( res => {
+	console.log(res)
+	console.log("res")
+}).catch( error => {
+	console.log(error)
+})
+
 //一、 Components和props,事件处理程序,条件渲染
 import Toogle from "./Toogle";
 
