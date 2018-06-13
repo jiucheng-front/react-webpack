@@ -9,7 +9,7 @@ import "../styles/fontstyle.css"
 import Ajax from "../api/Api"
 
 let Api = Ajax("GET","https://api.github.com/gists").then( res => {
-	console.log(res)
+	// console.log(res)
 	console.log("res")
 }).catch( error => {
 	console.log(error)
@@ -30,6 +30,10 @@ import Lists from "./Lists.jsx"
 
 // 四、Form表单
 import Forms from "./Forms.jsx"
+
+// 五、评论
+import Comments from "./Comments.jsx"
+
 
 // DOC  http://www.css88.com/react/docs/handling-events.html
 
@@ -54,7 +58,9 @@ class App extends Component {
 				<Lists />
 				<h3 className = "index-title">四、Forms(表单)</h3>
 				<Forms />
-				<h3 className = "index-title">五、状态提升</h3>
+				<h3 className = "index-title">五、简单的评论</h3>
+				<Comments />
+				<h3 className = "index-title">六、状态提升</h3>
 			</div>
 		);
 	}
