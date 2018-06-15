@@ -22,16 +22,17 @@ class Comments extends React.Component {
     }
     //1 传递给子组件的回调函数
     commentsSubmit(comment) {
-        console.log(comment)
-    }
-
-    submitClick(event) {
+        let comments = this.state.data
+        // comments.push(comment)
+        comments.unshift(comment)
+        this.setState({ data: comments })
+        console.log(comments,"新增了评论")
     }
     render() {
         return (
             <div className="contents-box">
                 <CommentsList data={this.state.data} />
-                <CommentsForm onCommentsSubmit={this.commentsSubmit} />
+                <CommentsForm onCommentsSubmit={this.commentsSubmit.bind(this)} />
             </div>
         )
     }

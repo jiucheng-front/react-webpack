@@ -8,11 +8,21 @@ class CommentsForm extends React.Component {
 
     submitClick(event) {
         // 通过：refs 集合获取指定的值
-        let anthor = this.refs.anthor.value
-        let content = this.refs.content.value
-        console.log(this.refs, anthor, content, "提交")
-        // 1、调用父组件的回调函数，传递参数
-        this.props.onCommentsSubmit({ anthor, content })
+        let anthor = this.refs.anthor.value.trim()
+        let content = this.refs.content.value.trim()
+        // 1、调用父组件的回调函数，传递参数.es6结构赋值
+        if (!anthor) {
+            alert("用户名不能为空")
+            return
+        } else if (!content) {
+            alert("评论不能为空")
+            return
+        } else {
+            this.props.onCommentsSubmit({ anthor, content })
+            // 置空
+            this.refs.anthor.value = ""
+            this.refs.content.value = ""
+        }
     }
     render() {
         return (
