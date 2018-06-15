@@ -11,6 +11,8 @@ class CommentsForm extends React.Component {
         let anthor = this.refs.anthor.value
         let content = this.refs.content.value
         console.log(this.refs, anthor, content, "提交")
+        // 1、调用父组件的回调函数，传递参数
+        this.props.onCommentsSubmit({ anthor, content })
     }
     render() {
         return (
