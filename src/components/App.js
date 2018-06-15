@@ -15,6 +15,12 @@ let Api = Ajax("GET","https://api.github.com/gists").then( res => {
 	console.log(error)
 })
 
+/**
+ * 1、组件通信
+ * 2、生命周期
+ * 3、路由
+ * 4、redux
+ */
 
 //一、 Components和props,事件处理程序,条件渲染
 import Toogle from "./Toogle";
