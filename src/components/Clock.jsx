@@ -28,7 +28,8 @@ class Clock extends React.Component {
     render() {
         return (
             <div className="clock-wrap">
-                <p>Time is:{this.state.date.toLocaleTimeString()}</p>
+                <p>Time is:</p>
+                <p>{this.state.date.toLocaleTimeString()}</p>
             </div>
         )
     }
